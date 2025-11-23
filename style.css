@@ -1,0 +1,311 @@
+/* GLOBAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f3f7;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #2052d6;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #2052d6;
+    color: white;
+    font-size: 24px;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #2052d6;
+}
+
+.hero-img:hover {
+    box-shadow: 0 0 20px #2052d6;
+    transition: 0.3s;
+}
+
+/* COLOR CHANGING TEXT */
+.animated-text {
+    font-size: 50px;
+    font-weight: bold;
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: green; }
+    50% { color: rgb(0, 140, 255); }
+    100% { color: green; }
+}
+
+/* GENERAL SECTION STYLES */
+#about, #skills, #projects, #contact {
+    padding: 40px 50px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+/* SKILLS SECTION */
+#skills {
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    width: 250px;
+    padding: 25px;
+    background: #0d36c4;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+}
+
+.skill-card span {
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* HOVER GLOW EFFECT */
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px #ff00ff;
+}
+
+/* PROJECTS SECTION */
+#projects {
+    text-align: center;
+}
+
+.projects-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* PROJECT SLIDER (CSS GIF EFFECT) */
+.project-card {
+    /* *** FIXED: Was 00px, now set to a proper width *** */
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.3);
+}
+
+.project-slider {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(project1.png);
+}
+
+@keyframes crossfade1 {
+    /* Project 1 Images */
+    0%   { background-image: url('project1.png'); opacity: 1; }
+    33%  { background-image: url('project1.png'); opacity: 1; }
+    34%  { background-image: url('project1.png'); opacity: 1; }
+    66%  { background-image: url('project1.png'); opacity: 1; }
+    67%  { background-image: url('project1.png'); opacity: 1; }
+    100% { background-image: url('project1.png'); opacity: 1; }
+}
+
+
+/* PROJECT 2 */
+.project-slider2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* This will now use the slideshow2 keyframes */
+    animation: slideshow2 12s infinite; 
+}
+
+/* NOTE: The conflicting second @keyframes crossfade1 block was removed here. */
+
+@keyframes slideshow2 {
+    /* Project 2 Images - Use your actual image files here */
+    0%  { background-image: url('project2.png'); opacity: 1; }
+    33%  { background-image: url('project2.png'); opacity: 1; }
+    34%  { background-image: url('project2.png'); opacity: 1; }
+    66% { background-image: url('project2.png'); opacity: 1; }
+    67%{ background-image: url('project2.png'); opacity: 1; }
+    100% { background-image: url('project2.png'); opacity: 1; }
+}
+
+/* CONTACT FORM */
+.contact-form {
+    width: 350px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid #a7c8ff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+/* Style for the Send button */
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #0038b8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* FOOTER */
+footer {
+    background: #0038b8;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ---------------------------
+    RESPONSIVE DESIGN
+    --------------------------- */
+
+/* MOBILE (Max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img {
+        width: 180px;
+        margin-top: 20px;
+    }
+
+    .animated-text {
+        font-size: 32px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .skill-card {
+        width: 90%;
+    }
+
+    .project-card {
+        width: 90%;
+        height: 200px;
+        margin: auto;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+/* TABLET (Max-width: 992px) - NOTE: 768px is repeated, so only keeping the broader rules here */
+@media (max-width: 992px) { /* Changed this to 992px to cover a broader tablet range */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img {
+        width: 240px;
+        margin-top: 20px;
+    }
+
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
